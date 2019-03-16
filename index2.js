@@ -13,7 +13,8 @@ EventEmitter.prototype.on = function(type, fn) {
   //将type事件以及对应的回调函数fn放入_events存储里面
   let handler = this._events.get(type);
   if (handler) {
-    this._events.set(type, [...handler, fn]);
+    handler.push(fn);
+    this._events.set(type, handler);
   } else {
     this._events.set(type, [fn]);
   }
@@ -35,7 +36,6 @@ var emitter = new EventEmitter();
 emitter.on("test", (age, num) => {
   console.log(`我叫${num},今年${age}`);
 });
-//同一方法再加一个监听者，不行了
 emitter.on("test", (age, num) => {
   console.log(`我今年${age},我爱${num}`);
 });

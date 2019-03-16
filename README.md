@@ -2,7 +2,6 @@
 **由存储事件，监听者，发布者组成。其中存储事件用了Map，因为键值对的存储方式处理起来比较方便。**
 
 1. 基本构造(index1.js)  
-
 1.1 初始化class  
 我们利用ES6的class关键字对Event进行初始化,定义Event的事件清单
 
@@ -144,8 +143,7 @@ emitter.emit("test", 18, "张三");  ////我叫张三,今年18
 
 3. 发现问题  
 我们已经基本完成了Event最重要的几个方法,也完成了升级改造。当然还有很多的不足，对传参的判断，监听事件后触发newListener等。但这在面试中现场写一个Event已经是很够意思了,主要是体现出来对发布-订阅模式的理解,以及针对多个监听状况下的处理。
-
-索性 [Event]https://github.com/Gozala/events/blob/master/events.js 库帮我们实现了完整的特性,整个代码量有300多行,很适合阅读,你可以花十分钟的时间通读一下,见识一下完整的Event实现.
+索性[Event](https://github.com/Gozala/events/blob/master/events.js)库帮我们实现了完整的特性,整个代码量有300多行,很适合阅读,你可以花十分钟的时间通读一下,见识一下完整的Event实现.
 
 
 
